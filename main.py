@@ -16,3 +16,4 @@ def superscript(exponent):
     sup = str.maketrans("0123456789.", "⁰¹²³⁴⁵⁶⁷⁸⁹˙")
     exp = exponent.translate(sup)
     return exp
+
