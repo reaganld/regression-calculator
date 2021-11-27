@@ -74,21 +74,25 @@ def set_list1():
         list1Display.insert(i + 1, superscript(str(i+1)) + "  " + list1[i])
 
     # Calculate and display 1-variable stats for list 1
-    npl1 = np.array(list(map(float, list1)))
-    l1_stats = ['Σ: ' + str(round(np.sum(npl1), ROUND_TO)),
-                'μ: ' + str(round(np.average(npl1), ROUND_TO)),
-                'σ: ' + str(round(float(np.std(npl1)), ROUND_TO)),
-                'σ²: ' + str(round(float(np.var(npl1)), ROUND_TO)),
-                'MIN: ' + str(round(np.min(npl1), ROUND_TO)),
-                'Q1: ' + str(round(float(np.percentile(npl1, 25)), ROUND_TO)),
-                'MED: ' + str(round(float(np.median(npl1)), ROUND_TO)),
-                'Q3: ' + str(round(float(np.percentile(npl1, 75)), ROUND_TO)),
-                'MAX: ' + str(round(np.max(npl1), ROUND_TO)),
-                'IQR: ' + str(round(float(np.percentile(npl1, 75) - np.percentile(npl1, 25)), ROUND_TO)),
-                'RANGE: ' + str(round(np.max(npl1) - np.min(npl1), ROUND_TO)),
-                'MODE: ' + str(round(statistics.mode(npl1), ROUND_TO))]
-    for i in range(len(l1_stats)):
-        l1Stats.insert(i + 1, l1_stats[i])
+    l1Stats.delete(0, END)
+    try:
+        npl1 = np.array(list(map(float, list1)))
+        l1_stats = ['Σ: ' + str(round(np.sum(npl1), ROUND_TO)),
+                    'μ: ' + str(round(np.average(npl1), ROUND_TO)),
+                    'σ: ' + str(round(float(np.std(npl1)), ROUND_TO)),
+                    'σ²: ' + str(round(float(np.var(npl1)), ROUND_TO)),
+                    'MIN: ' + str(round(np.min(npl1), ROUND_TO)),
+                    'Q1: ' + str(round(float(np.percentile(npl1, 25)), ROUND_TO)),
+                    'MED: ' + str(round(float(np.median(npl1)), ROUND_TO)),
+                    'Q3: ' + str(round(float(np.percentile(npl1, 75)), ROUND_TO)),
+                    'MAX: ' + str(round(np.max(npl1), ROUND_TO)),
+                    'IQR: ' + str(round(float(np.percentile(npl1, 75) - np.percentile(npl1, 25)), ROUND_TO)),
+                    'RANGE: ' + str(round(np.max(npl1) - np.min(npl1), ROUND_TO)),
+                    'MODE: ' + str(round(statistics.mode(npl1), ROUND_TO))]
+        for i in range(len(l1_stats)):
+            l1Stats.insert(i + 1, l1_stats[i])
+    except ValueError:
+        l1Stats.insert(1, "ERROR: Nonnumerical data in list 1")
 
 
 # Sets the values entered into the list 2 entry by the user to a list of strings
@@ -101,21 +105,25 @@ def set_list2():
         list2Display.insert(i + 1, superscript(str(i + 1)) + "  " + list2[i])
 
     # Calculate and display 1-variable stats for list 2
-    npl2 = np.array(list(map(float, list2)))
-    l2_stats = ['Σ: ' + str(round(np.sum(npl2), ROUND_TO)),
-                'μ: ' + str(round(np.average(npl2), ROUND_TO)),
-                'σ: ' + str(round(float(np.std(npl2)), ROUND_TO)),
-                'σ²: ' + str(round(float(np.var(npl2)), ROUND_TO)),
-                'MIN: ' + str(round(np.min(npl2), ROUND_TO)),
-                'Q1: ' + str(round(float(np.percentile(npl2, 25)), ROUND_TO)),
-                'MED: ' + str(round(float(np.median(npl2)), ROUND_TO)),
-                'Q3: ' + str(round(float(np.percentile(npl2, 75)), ROUND_TO)),
-                'MAX: ' + str(round(np.max(npl2), ROUND_TO)),
-                'IQR: ' + str(round(float(np.percentile(npl2, 75) - np.percentile(npl2, 25)), ROUND_TO)),
-                'RANGE: ' + str(round(np.max(npl2) - np.min(npl2), ROUND_TO)),
-                'MODE: ' + str(round(statistics.mode(npl2), ROUND_TO))]
-    for i in range(len(l2_stats)):
-        l2Stats.insert(i + 1, l2_stats[i])
+    l2Stats.delete(0, END)
+    try:
+        npl2 = np.array(list(map(float, list2)))
+        l2_stats = ['Σ: ' + str(round(np.sum(npl2), ROUND_TO)),
+                    'μ: ' + str(round(np.average(npl2), ROUND_TO)),
+                    'σ: ' + str(round(float(np.std(npl2)), ROUND_TO)),
+                    'σ²: ' + str(round(float(np.var(npl2)), ROUND_TO)),
+                    'MIN: ' + str(round(np.min(npl2), ROUND_TO)),
+                    'Q1: ' + str(round(float(np.percentile(npl2, 25)), ROUND_TO)),
+                    'MED: ' + str(round(float(np.median(npl2)), ROUND_TO)),
+                    'Q3: ' + str(round(float(np.percentile(npl2, 75)), ROUND_TO)),
+                    'MAX: ' + str(round(np.max(npl2), ROUND_TO)),
+                    'IQR: ' + str(round(float(np.percentile(npl2, 75) - np.percentile(npl2, 25)), ROUND_TO)),
+                    'RANGE: ' + str(round(np.max(npl2) - np.min(npl2), ROUND_TO)),
+                    'MODE: ' + str(round(statistics.mode(npl2), ROUND_TO))]
+        for i in range(len(l2_stats)):
+            l2Stats.insert(i + 1, l2_stats[i])
+    except ValueError:
+        l2Stats.insert(1, "ERROR: Nonnumerical data in list 2")
 
 
 # Updates the residuals display to show whatever the current residuals are
