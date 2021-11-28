@@ -22,7 +22,7 @@ The program also includes extensive error checking which catches user errors and
 
 ![image](https://user-images.githubusercontent.com/88519278/143723166-52752f63-dd48-4c39-9c98-3e9491962598.png)
 
-The last feature predicts a dependent y-value based on an indepedent x-value entered by the user. This simply enters the user's x-value into the previously calculated regression formula and displays the y-value that lies on the regression curve at the user-entered x-value, as shown below:
+The last feature predicts a dependent y-value based on an indepedent x-value entered by the user. This simply enters the user's x-value into the previously calculated regression formula and displays the y-value that lies on the regression curve at the user-entered x-value. A predicted y-value of 1.278022 based on an x-value of 17 using the quadratic regression from before is shown here:
 
 ![image](https://user-images.githubusercontent.com/88519278/143723550-032a127c-aea1-464d-8d07-3b78cbb670a9.png)
 
